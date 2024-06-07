@@ -18,13 +18,41 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // spring security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation group: 'io.jsonwebtoken', name:"jjwt", version:"0.9.1"
+    // jpa
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'org.redisson:redisson-spring-boot-starter'
+
+    // mysql driver
     runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // validation
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    // lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // swagger
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+
+    // Redis
+    implementation 'org.redisson:redisson-spring-boot-starter:3.16.3'
+
+    // test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+
 }
 
 tasks.named('test') {
